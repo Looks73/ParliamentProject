@@ -38,3 +38,18 @@ votes_mps:
 # ----------------------------------
 votes_mp:
 	@python calc_votes.py -n $(filter-out $@,$(MAKECMDGOALS)) -s
+
+# ----------------------------------
+#       Evaluation parite
+# ----------------------------------
+parite:
+	@python parite.py -d current_mps.csv
+
+parite_byparty:
+	NB=$(strip $(filter-out $@,$(MAKECMDGOALS)))
+	NREF=$(strip )
+ifeq (NB, NREF)
+	@python parite.py -d current_mps.csv -p
+else
+	@python parite.py -d current_mps.csv -p -g $(filter-out $@,$(MAKECMDGOALS))
+endif
