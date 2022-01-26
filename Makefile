@@ -1,4 +1,11 @@
 # ----------------------------------
+#       Chargement parlementaires
+# ----------------------------------
+load_mps:
+	@rm -rf data/current_mps.csv
+	@curl -s 'https://www.nosdeputes.fr/deputes/enmandat/csv' > data/current_mps.csv
+
+# ----------------------------------
 #       Chargement votes
 # ----------------------------------
 votes:
