@@ -8,6 +8,10 @@ __pycache__
 *checkpoint.ipynb
 .ipynb_checkpoints
 
+# Fichiers pickle #
+
+*.pickle
+
 # inteliJ #
 .idea
 *.vscode/
