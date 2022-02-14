@@ -33,7 +33,6 @@ interventions:
 	@rm debats.zip
 
 ex_interventions:
-	@say "Cette fonction recherche les interventions de tous les parlementaires"
 	@rm -rf data/interventions.csv
 	@python extract_interventions.py
 
@@ -41,7 +40,6 @@ ex_interventions:
 #       Calcul des votes pour tous les mp
 # -------------------------------------------
 votes_mps:
-	@say "Cette fonction calcule les statistiques de vote de tous les parlementaires"
 	@rm -rf data/votes_mps.csv
 	@python votes_mps.py 
 
@@ -49,14 +47,12 @@ votes_mps:
 #       Calcul des votes par mp
 # ----------------------------------
 votes_mp:
-	@say "cette fonction calcule les statistiques de vote du parlementaire choisi"
 	@python calc_votes.py -n $(filter-out $@,$(MAKECMDGOALS)) -s
 
 # ----------------------------------
 #       Evaluation parite
 # ----------------------------------
 parite:
-	@say "Cette fonction évalue la parité de l'assemblée nationale"
 	@python parite.py -d current_mps.csv
 
 parite_byparty:
