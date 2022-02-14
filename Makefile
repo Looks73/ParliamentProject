@@ -15,7 +15,6 @@ votes:
 	@unzip scrutins.zip
 	@mv xml data/xml/votes
 	@rm scrutins.zip
-	@say "C'est fini"
 
 ex_votes:
 	@say "Cette fonction calcule les votes de tous les parlementaires"
@@ -32,7 +31,6 @@ interventions:
 	@unzip debats.zip
 	@mv xml/compteRendu data/xml/compteRendus
 	@rm debats.zip
-	@say "C'est fini"
 
 ex_interventions:
 	@say "Cette fonction recherche les interventions de tous les parlementaires"
