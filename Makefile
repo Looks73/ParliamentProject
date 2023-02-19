@@ -11,7 +11,7 @@ load_mps:
 votes:
 	@say "Cette fonction extrait les résultats de tous les scrutins ; c'est long"
 	@rm -rf data/xml/votes
-	@curl -s 'https://data.assemblee-nationale.fr/static/openData/repository/15/loi/scrutins/Scrutins_XV.xml.zip' > scrutins.zip
+	@curl 'http://data.assemblee-nationale.fr/static/openData/repository/16/loi/scrutins/Scrutins.xml.zip' > scrutins.zip
 	@unzip scrutins.zip
 	@mv xml data/xml/votes
 	@rm scrutins.zip
@@ -27,7 +27,7 @@ ex_votes:
 interventions:
 	@say "Cette fonction extrait les compte-rendus de l'assemblée nationale ; c'est très long"
 	@rm -rf data/xml/compteRendus
-	@curl -s 'https://data.assemblee-nationale.fr/static/openData/repository/15/vp/syceronbrut/syseron.xml.zip' > debats.zip
+	@curl 'https://data.assemblee-nationale.fr/static/openData/repository/16/vp/syceronbrut/syseron.xml.zip' > debats.zip
 	@unzip debats.zip
 	@mv xml/compteRendu data/xml/compteRendus
 	@rm debats.zip
