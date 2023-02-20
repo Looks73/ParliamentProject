@@ -47,8 +47,8 @@ for file in liste:
             return depute
         
         # Nettoyage du DataFrame
-        interventions = interventions[interventions.nom != "M. le président"].reset_index(drop=True)
         interventions = interventions[interventions.nom != "Mme la présidente"].reset_index(drop=True)
+        interventions = interventions.loc[~interventions.nom.str.contains("député")].reset_index(drop=True)
         interventions.nom = interventions.nom.str.replace('M\.', '')
         interventions.nom = interventions.nom.str.replace('Mme','')
         interventions.nom = interventions.nom.str.replace(u'\xa0', u' ')
